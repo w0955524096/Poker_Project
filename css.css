@@ -1,0 +1,17 @@
+.selector-for-some-widget {
+   box-sizing: content-box;
+}
+body {
+    background-color: gray;
+    padding:20px;
+}
+*, ::after, ::before {
+    box-sizing: border-box;
+    padding:5px;
+}
+.container {
+background-color: white;
+}
+.rowre {
+    background-color: gray;
+}
