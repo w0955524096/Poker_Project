@@ -33,7 +33,7 @@ $(function () {
             this.shuffle(all_card)
 
             //生成牌並將數字放入在append進row
-            for (let i = 0; i < 52; i++) {
+            for (let i = 0; i < 20; i++) {
 
                 card = "<div class=\"col-1" +
                     "\">\n" +
