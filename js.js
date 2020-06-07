@@ -1,4 +1,4 @@
-$(function () {
+const start=()=>{
 
 //宣告
     let all_card,card_color,card,people,color;
@@ -90,4 +90,48 @@ $(function () {
 
 
 
-});
+}
+
+const end=()=>{
+
+    //app2綁定事件
+    const app2 = new Vue({
+        el: '#app-2',
+        data: {
+          message: '页面加载于 ' + new Date().toLocaleString()
+        }
+      })  
+
+    //demo綁定事件
+    const demo = new Vue({
+        el: '#demo',
+        delimiters: ['${', '}'],
+        data: {
+          n: 0
+        },
+        methods: {
+            prompt(){
+                deco.n++;
+                //alert("123");
+          }
+        }
+      })
+
+     //demo綁定事件
+    const deco = new Vue({
+        el: '#deco',
+        delimiters: ['${', '}'],
+        data: {
+          n: 0
+        },
+        methods: {
+            click(){
+                this.n=0
+          }
+        }
+      })     
+    //return   
+}
+
+end()
+
