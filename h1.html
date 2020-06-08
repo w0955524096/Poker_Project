@@ -70,6 +70,7 @@
         <!--牌組 -->
         <div class="row open">
 
+            <!--鼠标悬停几秒钟查看此处动态绑定的提示信息！-->
             <button type="button" class="col btn btn-outline-success" id="app-2">
             
                 <span v-bind:title="message">
@@ -78,31 +79,55 @@
             
             </button>
 
+            <!--Trigger -->
             <button type="button" class="col btn btn-outline-danger" id="demo" @click="prompt">
             
                 <a>Trigger a handler</a>
 
             </button>
 
+            <!--計數器 -->
             <div class="col btn btn-outline-success" id="deco" @click="click">
                 <p>${ n }</p>            
             </div>
-
-
-
-
-
         </div>
 
+        <!--動態新增 -->
+        <div id="content_add">
+            <input v-model="newAddText" placeholder="請輸入要新增的內容" />
+               <button @click='addNewList'>新增</button>
+               <div class="row">
+                   <div class="col" v-for='(list,index) in lists' v-bind:key='list.id'>
+                    <img class="img-fluid" alt="" v-bind:src='list.url'></img>
+                       {{list.id}} <button v-on:click='lists.splice(index, 1)'>刪除</button>
+                   </div>
+               </ul>
+           </div>
+
+        <!--圖片組 -->
+        <div class="row" id="img-content">
+
+            <!--img-content -->            
+            <div class="col">    
+                <img class="img-fluid" alt="" src="https://memeprod.sgp1.digitaloceanspaces.com/user-template/5102d593d3d4cf4d336bd49d1ed1c059.png"></img>            
+            </div>
+
+            <!--img-content -->   
+            <div class="col">    
+                <img class="img-fluid" alt="" src="https://memeprod.sgp1.digitaloceanspaces.com/user-template/98996b8124e004cc88b6d1c3860799fc.png"></img>            
+            </div>
+    
+        </div>
+              
         <!--置底footer-->
-        <footer class="navbar-fixed-bottom" id="ad">
+        <footer class="navbar-fixed-bottom" id="ad" @click="click">
                <div class="container">
                  內容區域
                </div>
              </footer>
 
         <!--關於我們footer-->
-        <footer class="navbar-fixed-bottom" id="aboutus">
+        <footer class="navbar-fixed-bottom" id="aboutus" @click="click">
             <div class="container">
               關於我們
             </div>

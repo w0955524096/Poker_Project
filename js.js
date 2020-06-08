@@ -117,7 +117,7 @@ const end=()=>{
         }
       })
 
-     //demo綁定事件
+     //deco綁定事件
     const deco = new Vue({
         el: '#deco',
         delimiters: ['${', '}'],
@@ -129,7 +129,60 @@ const end=()=>{
                 this.n=0
           }
         }
-      })     
+      })
+     
+     //add-content綁定事件
+     const addcontent = new Vue({
+        el: '#content_add',
+        data: {
+        newAddText:'',
+            lists:[
+                {id:1,url:'https://memeprod.sgp1.digitaloceanspaces.com/user-template/5102d593d3d4cf4d336bd49d1ed1c059.png'},
+                {id:2,url:'https://memeprod.sgp1.digitaloceanspaces.com/user-template/5102d593d3d4cf4d336bd49d1ed1c059.png'},
+                {id:3,url:'https://memeprod.sgp1.digitaloceanspaces.com/user-template/5102d593d3d4cf4d336bd49d1ed1c059.png'},
+            ],
+            nextTodoId: 4
+        },
+        methods:{
+            addNewList:function(){
+                this.lists.push({
+                    id:this.nextTodoId++,
+                    url:this.newAddText
+                })
+                this.newAddText=''
+            }
+        } 
+       })
+
+     //footer-ad綁定事件
+     const ad = new Vue({
+        el: '#ad',
+        delimiters: ['${', '}'],
+        data: {
+          i: 0
+        },
+        methods: {
+            click(){
+                alert("this is ad")
+          }
+        }
+      })      
+
+     //footer-aboutus綁定事件
+     const aboutus = new Vue({
+        el: '#aboutus',
+        delimiters: ['${', '}'],
+        data: {
+          i: 0
+        },
+        methods: {
+            click(){
+                alert("this is aboutus")
+          }
+        }
+      })  
+
+
     //return   
 }
 
