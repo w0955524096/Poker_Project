@@ -94,7 +94,7 @@ const start=()=>{
 
 const end=()=>{
 
-    //app2綁定事件
+//app2綁定事件
     const app2 = new Vue({
         el: '#app-2',
         data: {
@@ -102,7 +102,7 @@ const end=()=>{
         }
       })  
 
-    //demo綁定事件
+//demo綁定事件
     const demo = new Vue({
         el: '#demo',
         delimiters: ['${', '}'],
@@ -117,7 +117,7 @@ const end=()=>{
         }
       })
 
-     //deco綁定事件
+//deco綁定事件
     const deco = new Vue({
         el: '#deco',
         delimiters: ['${', '}'],
@@ -131,15 +131,22 @@ const end=()=>{
         }
       })
      
-     //add-content綁定事件
-     const addcontent = new Vue({
+//add-content綁定事件
+    const addcontent = new Vue({
         el: '#content_add',
         data: {
         newAddText:'',
             lists:[
                 {id:1,url:'https://memeprod.sgp1.digitaloceanspaces.com/user-template/5102d593d3d4cf4d336bd49d1ed1c059.png'},
-                {id:2,url:'https://memeprod.sgp1.digitaloceanspaces.com/user-template/5102d593d3d4cf4d336bd49d1ed1c059.png'},
-                {id:3,url:'https://memeprod.sgp1.digitaloceanspaces.com/user-template/5102d593d3d4cf4d336bd49d1ed1c059.png'},
+                {id:2,url:'https://memeprod.sgp1.digitaloceanspaces.com/user-template/98996b8124e004cc88b6d1c3860799fc.png'},
+                {id:3,url:'https://memeprod.sgp1.digitaloceanspaces.com/user-wtf/1591492459696.jpg'},
+                {id:4,url:"https://memeprod.sgp1.digitaloceanspaces.com/user-wtf/1591551684094.jpg"},
+                {id:5,url:"https://memeprod.sgp1.digitaloceanspaces.com/user-wtf/1591515814761.jpg"},
+                {id:6,url:"https://memeprod.sgp1.digitaloceanspaces.com/user-wtf/1591543368795.jpg"},
+                {id:7,url:"https://memeprod.sgp1.digitaloceanspaces.com/user-wtf/1591536907641.jpg"},
+                {id:8,url:"https://memeprod.sgp1.digitaloceanspaces.com/user-wtf/1591534896801.jpg"},
+                {id:9,url:"https://memeprod.sgp1.digitaloceanspaces.com/user-wtf/1591526734996.jpg"}
+            
             ],
             nextTodoId: 4
         },
@@ -154,7 +161,37 @@ const end=()=>{
         } 
        })
 
-     //footer-ad綁定事件
+//hotel_add綁定事件
+    const hotel_add = new Vue({
+        el: '#hotel_add',
+        data: {
+        newAddText:'',
+            lists:[
+                {id:1,url:'https://memeprod.sgp1.digitaloceanspaces.com/user-template/5102d593d3d4cf4d336bd49d1ed1c059.png'},
+                {id:2,url:'https://memeprod.sgp1.digitaloceanspaces.com/user-template/98996b8124e004cc88b6d1c3860799fc.png'},
+                {id:3,url:'https://memeprod.sgp1.digitaloceanspaces.com/user-wtf/1591492459696.jpg'},
+                {id:4,url:"https://memeprod.sgp1.digitaloceanspaces.com/user-wtf/1591551684094.jpg"},
+                {id:5,url:"https://memeprod.sgp1.digitaloceanspaces.com/user-wtf/1591515814761.jpg"},
+                {id:6,url:"https://memeprod.sgp1.digitaloceanspaces.com/user-wtf/1591543368795.jpg"},
+                {id:7,url:"https://memeprod.sgp1.digitaloceanspaces.com/user-wtf/1591536907641.jpg"},
+                {id:8,url:"https://memeprod.sgp1.digitaloceanspaces.com/user-wtf/1591534896801.jpg"},
+                {id:9,url:"https://memeprod.sgp1.digitaloceanspaces.com/user-wtf/1591526734996.jpg"}
+            
+            ],
+            nextTodoId: 4
+        },
+        methods:{
+            addNewList:function(){
+                this.lists.push({
+                    id:this.nextTodoId++,
+                    url:this.newAddText
+                })
+                this.newAddText=''
+            }
+        } 
+    })
+
+//footer-ad綁定事件
      const ad = new Vue({
         el: '#ad',
         delimiters: ['${', '}'],
@@ -168,7 +205,7 @@ const end=()=>{
         }
       })      
 
-     //footer-aboutus綁定事件
+//footer-aboutus綁定事件
      const aboutus = new Vue({
         el: '#aboutus',
         delimiters: ['${', '}'],
@@ -181,6 +218,7 @@ const end=()=>{
           }
         }
       })  
+
 
 
     //return   

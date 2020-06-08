@@ -47,9 +47,11 @@
 </head>
 
 <body>
+
+<!--背景色/圖片 -->
     <div class="container bg-dark">
 
-        <!--功能 -->
+    <!--功能 -->
         <div class="row">
             <div class="col">
                 <div class="alert-danger fun" role="alert">
@@ -67,7 +69,7 @@
 
         </div>
 
-        <!--牌組 -->
+    <!--牌組 -->
         <div class="row open">
 
             <!--鼠标悬停几秒钟查看此处动态绑定的提示信息！-->
@@ -91,47 +93,90 @@
                 <p>${ n }</p>            
             </div>
         </div>
+        
+    <!--輪播 -->
+        <div id="demo1" class=" row carousel slide " data-ride="carousel">
+ 
+        <!-- 指示符 -->
+            <ul class="carousel-indicators">
+              <li data-target="#demo1" data-slide-to="0" class="active"></li>
+              <li data-target="#demo1" data-slide-to="1"></li>
+              <li data-target="#demo1" data-slide-to="2"></li>
+            </ul>
+           
+        <!-- 轮播图片 -->
+        <div class="col"></div>
+        <div class="carousel-inner col">
+             
+                <img class="carousel-item active img-fluid" src="https://memeprod.sgp1.digitaloceanspaces.com/user-wtf/1591515814761.jpg">
+             
+                <img class="carousel-item img-fluid" src="https://memeprod.sgp1.digitaloceanspaces.com/user-template/98996b8124e004cc88b6d1c3860799fc.png">
+              
+                <img class="carousel-item img-fluid" src="https://memeprod.sgp1.digitaloceanspaces.com/user-wtf/1591551684094.jpg">
+              
+            </div>
+        <div class="col"></div>
 
-        <!--動態新增 -->
+        <!-- 左右切换按钮 -->
+            <a class="carousel-control-prev" href="#demo1" data-slide="prev">
+              <span class="carousel-control-prev-icon"></span>
+            </a>
+            <a class="carousel-control-next" href="#demo1" data-slide="next">
+              <span class="carousel-control-next-icon"></span>
+            </a>
+           
+        </div>
+
+    <!----------------------------------------精選行程(分隔線)------------------------------------------>        
+        <div class="mb-4">
+            <!-- Gradient divider -->
+            <hr data-content="精選行程" class="hr-text">
+        </div>
+        
+    <!--精選行程:動態新增圖片 -->
         <div id="content_add">
             <input v-model="newAddText" placeholder="請輸入要新增的內容" />
                <button @click='addNewList'>新增</button>
                <div class="row">
-                   <div class="col" v-for='(list,index) in lists' v-bind:key='list.id'>
+                   <div class="col-4" v-for='(list,index) in lists' v-bind:key='list.id'>
                     <img class="img-fluid" alt="" v-bind:src='list.url'></img>
                        {{list.id}} <button v-on:click='lists.splice(index, 1)'>刪除</button>
                    </div>
-               </ul>
-           </div>
-
-        <!--圖片組 -->
-        <div class="row" id="img-content">
-
-            <!--img-content -->            
-            <div class="col">    
-                <img class="img-fluid" alt="" src="https://memeprod.sgp1.digitaloceanspaces.com/user-template/5102d593d3d4cf4d336bd49d1ed1c059.png"></img>            
-            </div>
-
-            <!--img-content -->   
-            <div class="col">    
-                <img class="img-fluid" alt="" src="https://memeprod.sgp1.digitaloceanspaces.com/user-template/98996b8124e004cc88b6d1c3860799fc.png"></img>            
-            </div>
-    
+                </div>
         </div>
-              
-        <!--置底footer-->
+
+    <!----------------------------------------旅館推薦(分隔線)------------------------------------------>        
+        <div class="mb-4">
+            <!-- Gradient divider -->
+            <hr data-content="旅館推薦" class="hr-text">
+        </div>
+        
+    <!--旅館推薦:動態新增圖片 -->
+        <div id="hotel_add">
+            <input v-model="newAddText" placeholder="請輸入要新增的內容" />
+               <button @click='addNewList'>新增</button>
+               <div class="row">
+                   <div class="col-4" v-for='(list,index) in lists' v-bind:key='list.id'>
+                    <img class="img-fluid" alt="" v-bind:src='list.url'></img>
+                       {{list.id}} <button v-on:click='lists.splice(index, 1)'>刪除</button>
+                   </div>
+                </div>
+        </div>
+             
+    <!--置底footer-->
         <footer class="navbar-fixed-bottom" id="ad" @click="click">
                <div class="container">
                  內容區域
                </div>
              </footer>
 
-        <!--關於我們footer-->
+    <!--關於我們footer-->
         <footer class="navbar-fixed-bottom" id="aboutus" @click="click">
             <div class="container">
               關於我們
             </div>
           </footer>             
+    
     </div>
 
 
