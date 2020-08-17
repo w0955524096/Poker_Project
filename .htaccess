@@ -1,3 +1,3 @@
 Options -Indexes
 RewriteEngine on
-RewriteRule index h1.html
+RewriteRule ^index$ h1.html
